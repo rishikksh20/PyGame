@@ -1,4 +1,7 @@
 import pygame
+import time
+
+
 pygame.init()
 #Pygame understand the rgd value so we need to update color variables
 white=(255,255,255)
@@ -18,6 +21,17 @@ lead_y_change=0;
 clock=pygame.time.Clock()
 gameExit= False
 block_size=10
+FPS=30
+
+#Defining the font which I use
+font= pygame.font.SysFont(None,25)
+
+# Adding messages to the screen
+def message_to_screen(msg,color):
+    screen_text=font.render(msg,True,color)
+    gameDisplay.blit(screen_text,[display_width/2,display_height/2])
+
+# Main Game Loop
 while not gameExit:
     for event in pygame.event.get():
         print(event)
@@ -60,6 +74,10 @@ while not gameExit:
     pygame.draw.rect(gameDisplay,black,[lead_x,lead_y,10,10])   
     
     pygame.display.update()
-    clock.tick(15) # 15 fps speed
+    clock.tick(FPS) # 30 fps speed
+
+message_to_screen("Game Over",red)
+pygame.display.update()
+time.sleep(2)
 pygame.quit()
 quit()
