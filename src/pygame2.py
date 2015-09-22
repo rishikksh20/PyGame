@@ -1,3 +1,5 @@
+# Authored by Rishikesh
+
 import pygame
 import time
 
