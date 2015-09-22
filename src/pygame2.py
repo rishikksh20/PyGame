@@ -21,18 +21,34 @@ while not gameExit:
             gameExit=True
         if event.type==pygame.KEYDOWN:  # for start the movement of rect
             if event.key==pygame.K_LEFT:
-                lead_x_change=-10
+                lead_x_change=-10       # change x-axis
+                lead_y_change=0;        # change y-axis
             elif event.key==pygame.K_RIGHT:
                 lead_x_change=10
+                lead_y_change=0;
             elif event.key==pygame.K_UP:
                 lead_y_change=-10
+                lead_x_change=0;
             elif event.key==pygame.K_DOWN:
                 lead_y_change=10
+                lead_x_change=0;
         if event.type==pygame.KEYUP:  # for stopping the movement of rect
             if event.key==pygame.K_LEFT or event.key==pygame.K_RIGHT:
                 lead_x_change=0;
             if event.key==pygame.K_UP or event.key==pygame.K_DOWN:
                 lead_y_change=0;
+
+    # For establishing the boundary
+    if lead_x>=800:
+        lead_x=0
+    if lead_y>=600:
+        lead_y=0
+    if lead_x<0:
+        lead_x=800
+    if lead_y<0:
+        lead_y=600
+        
+         
             
     lead_x+=lead_x_change
     lead_y+=lead_y_change 
