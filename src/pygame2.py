@@ -28,6 +28,6 @@ while not gameExit:
     pygame.draw.rect(gameDisplay,black,[lead_x,lead_y,10,10])   
     
     pygame.display.update()
-    clock.tick(30)
+    clock.tick(15) # 15 fps speed
 pygame.quit()
 quit()
