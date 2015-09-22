@@ -11,19 +11,31 @@ pygame.display.set_caption("Rishikesh")
 lead_x=300
 lead_y=300
 lead_x_change=0;
+lead_y_change=0;
 clock=pygame.time.Clock()
 gameExit= False
 while not gameExit:
     for event in pygame.event.get():
-        #print(event)
+        print(event)
         if event.type==pygame.QUIT:
             gameExit=True
-        if event.type==pygame.KEYDOWN:
+        if event.type==pygame.KEYDOWN:  # for start the movement of rect
             if event.key==pygame.K_LEFT:
                 lead_x_change=-10
-            if event.key==pygame.K_RIGHT:
+            elif event.key==pygame.K_RIGHT:
                 lead_x_change=10
-    lead_x+=lead_x_change    
+            elif event.key==pygame.K_UP:
+                lead_y_change=-10
+            elif event.key==pygame.K_DOWN:
+                lead_y_change=10
+        if event.type==pygame.KEYUP:  # for stopping the movement of rect
+            if event.key==pygame.K_LEFT or event.key==pygame.K_RIGHT:
+                lead_x_change=0;
+            if event.key==pygame.K_UP or event.key==pygame.K_DOWN:
+                lead_y_change=0;
+            
+    lead_x+=lead_x_change
+    lead_y+=lead_y_change 
     gameDisplay.fill(white)
     pygame.draw.rect(gameDisplay,black,[lead_x,lead_y,10,10])   
     
