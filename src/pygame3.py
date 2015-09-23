@@ -15,7 +15,7 @@ gameDisplay=pygame.display.set_mode((display_width,display_height))
 #pygame.diaplay.flip()
 pygame.display.set_caption("Rishikesh")
 #pygame.display.update()
-clock=pygame.time.Clock()
+clock=pygame.time.Clock()   #System Clock SetUp 
 
 
 #Defining the font which I use
