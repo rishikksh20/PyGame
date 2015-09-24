@@ -87,7 +87,7 @@ def gameLoop():
             
              
                 
-        lead_x+=lead_x_change
+        lead_x+=lead_x_change #reflecting the change
         lead_y+=lead_y_change 
         gameDisplay.fill(white)
         pygame.draw.rect(gameDisplay,black,[lead_x,lead_y,10,10])   
@@ -97,8 +97,8 @@ def gameLoop():
 
     
     
-    pygame.quit()
-    quit()
+    pygame.quit()   #quiting the pygame
+    quit()          #quiting python
 
 
 gameLoop()
