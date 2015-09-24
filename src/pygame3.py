@@ -15,7 +15,7 @@ gameDisplay=pygame.display.set_mode((display_width,display_height))
 #pygame.diaplay.flip()
 pygame.display.set_caption("Rishikesh")
 #pygame.display.update()
-clock=pygame.time.Clock()   #System Clock SetUp 
+clock=pygame.time.Clock()
 
 
 #Defining the font which I use
@@ -87,8 +87,8 @@ def gameLoop():
             
              
                 
-        lead_x+=lead_x_change #reflecting the change
-        lead_y+=lead_y_change 
+        lead_x+=lead_x_change #reflecting the change in x-direction
+        lead_y+=lead_y_change # reflecting the change in y-direction
         gameDisplay.fill(white)
         pygame.draw.rect(gameDisplay,black,[lead_x,lead_y,10,10])   
         
