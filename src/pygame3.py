@@ -2,6 +2,7 @@
 # Python Gaming
 import pygame
 import time
+import random
 
 
 pygame.init()
@@ -20,7 +21,8 @@ clock=pygame.time.Clock()
 
 #Defining the font which I use
 font= pygame.font.SysFont(None,25)
-
+block_size=10
+FPS=30
 # Adding messages to the screen
 def message_to_screen(msg,color):
     screen_text=font.render(msg,True,color)
@@ -35,8 +37,9 @@ def gameLoop():
     lead_y_change=0;
     gameExit= False
     gameOver=False
-    block_size=10
-    FPS=30
+
+    randAppleX=round(random.randrange(0, display_width-block_size)/10.0)*10.0
+    randAppleY=round(random.randrange(0, display_height-block_size)/10.0)*10.0
     
     while not gameExit:
         # After Game Over Menu
@@ -90,7 +93,9 @@ def gameLoop():
         lead_x+=lead_x_change #reflecting the change in x-direction
         lead_y+=lead_y_change # reflecting the change in y-direction
         gameDisplay.fill(white)
-        pygame.draw.rect(gameDisplay,black,[lead_x,lead_y,10,10])   
+
+        pygame.draw.rect(gameDisplay,red,[randAppleX,randAppleY,block_size,block_size])
+        pygame.draw.rect(gameDisplay,black,[lead_x,lead_y,block_size,block_size])   
         
         pygame.display.update()
         clock.tick(FPS) # 30 fps speed
