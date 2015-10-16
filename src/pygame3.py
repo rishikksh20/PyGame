@@ -1,6 +1,6 @@
 # Authored by Rishikesh
 # Python Gaming
-# Date: 
+# Date: 01 Oct 2015
 import pygame
 import time
 import random
